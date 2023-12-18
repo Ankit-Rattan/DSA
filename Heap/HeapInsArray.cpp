@@ -38,10 +38,11 @@ class heap{
 int main()
 {
     heap h;
-    h.insert(10);
-    h.insert(40);
     h.insert(50);
-    h.insert(5);
+    h.insert(55);
+    h.insert(53);
+    h.insert(52);
+    h.insert(54);
 
     h.print();
     return 0;
