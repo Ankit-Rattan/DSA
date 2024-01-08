@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-// Implementation of Tries
+// Implementation of Tries 
+
 
 class TrieNode
 {
@@ -23,6 +24,9 @@ public:
 
 class Trie
 {
+private:
+    TrieNode* root;
+
 public:
     Trie()
     {
@@ -36,12 +40,12 @@ public:
                 root->isTerminal = true;
                 return;
         }
-        int index = word[0] - 'A';
+        int index = word[0] - 'A';   // change 'A' to 'a' if testing for small letters
         TrieNode* child;
         if(root -> children[index]!= NULL){
-            child = root -> children(index);
+            child = root -> children[index];
         }else{
-            children=new TrieNode(word[0]);
+            child=new TrieNode(word[0]);
             root->children[index]=child;
         }
 
@@ -57,9 +61,9 @@ public:
     // For Search
 
     bool searchUtil(TrieNode* root, string word){
-        if(wordlength() == 0) return root-> isTerminal;
+        if(word.length() == 0) return root-> isTerminal;
     
-        int index = word[0]- 'A';
+        int index = word[0]- 'A';  //change 'A' to 'a' if testing for small letters
         TrieNode* child;
 
         if(root->children[index]!=NULL){
@@ -80,9 +84,9 @@ public:
 int
 main()
 {
-    Trie t =  new Trie();
-    t->insertWord("abcd");
-    cout<<t->searchWord("abcd")<<endl;
+    Trie* t =  new Trie();
+    t->insertWord("ABCD");
+    cout<<t->searchWord("ABCD")<<endl;
 
     return 0;
 }
