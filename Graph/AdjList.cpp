@@ -3,14 +3,16 @@
 #include<list>
 using namespace std;
 
+template<typename T>
+
 // Implementing Graph through Adjacency List
 
 class graph{
 
     public:
-        unordered_map<int, list<int>> adj;
+        unordered_map<T, list<T>> adj;
 
-        void addEdge(int u, int v, bool dir){
+        void addEdge(T u, T v, bool dir){
             // dir = 0 -> undirected
             // dir = 1 -> directed
 
@@ -46,7 +48,7 @@ int main()
     cout<<"Enter the number of edges"<<endl;
     cin>>e;
 
-    graph g;
+    graph<int> g;
 
     for(auto i = 0; i<e; i++){
         int u, v;
