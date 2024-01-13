@@ -2,6 +2,8 @@
 #include<queue>
 using namespace std;
 
+// BST
+
 class Node{
     public:
         int data;
