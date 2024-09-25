@@ -90,3 +90,13 @@ main()
 
     return 0;
 }
+
+int
+main()
+{
+    Trie* t =  new Trie();
+    t->insertWord("ABCD");
+    cout<<t->searchWord("ABCD")<<endl;
+
+    return 0;
+}
